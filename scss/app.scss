@@ -1,0 +1,200 @@
+@import "settings";
+@import "foundation";
+
+// External Stylings:
+
+
+// Stylings for a fixed off-canvas bar.
+// Source: http://codepen.io/anon/pen/uGhvr
+.off-canvas-fixed {
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+}
+.move-right > .off-canvas-fixed {
+  height: 100%;
+  -webkit-transform: translate3d(15.625rem, 0, 0);
+  transform: translate3d(15.625rem, 0, 0);
+}
+.left-off-canvas-menu {
+  -webkit-transform: none;
+  transform: none;
+  margin-left: -15.625rem;
+}
+
+// My Stylings:
+body {
+  background:url(../images/background.jpg) repeat fixed;
+}
+p {
+  text-indent: 3em;
+  margin-bottom: 0;
+}
+.innerContainer {
+  position: relative;
+  float: none;
+  padding: 20px 20px;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, .7);
+  color: #FFFFFF;
+  border-radius: 25px;
+/*  opacity:0.7;*/
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+.innerContainer .img {
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  float: left;
+}
+img:not(.nextArrow):not(.previousArrow) {
+  border: 10px solid rgba(0, 0, 0, .7);
+  border-radius: 25px;
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+.tab-bar {
+  z-index: 30;
+}
+.title-area a {
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  text-shadow: rgba(0, 0, 0, 0.2) 2px 6px 5px, rgba(255, 255, 255, 0.4) 0px -4px 30px;
+}
+.top-bar {
+  -webkit-box-shadow: 0px 6px 5px 0px rgba(115,115,115,0.75);
+  -moz-box-shadow: 0px 6px 5px 0px rgba(115,115,115,0.75);
+  box-shadow: 0px 6px 5px 0px rgba(115,115,115,0.75);
+  text-align:center;
+  height: 3rem;
+  padding-top: 0.5rem;
+  z-index: 30;
+}
+.absoPos {
+  position: absolute;
+}
+.top-bar-section {
+  display: inline-block;
+}
+.top-bar-section li {
+  margin: 0 1rem 0 1rem;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #666666;
+  height: 2rem;
+  line-height: 2rem;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  -webkit-box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+.nextArrow {
+  cursor: pointer;
+  position: relative;
+  float:right;
+}
+.previousArrow {
+  cursor: pointer;
+  position: relative;
+  float:left;
+}
+
+// Section 3 CSS
+.imgBlog {
+  z-index: 20;
+  float: right;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.workCubeText .header {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.workCubeText .dates {
+  font-weight: bold;
+  font-size: 1em;
+}
+.workCubeText .text {
+  font-size: .75em;
+}
+.imgBlog img {
+  width: 100px;
+  height: 100px;
+}
+#workCube1,
+#workCube2,
+#workCube3,
+#workCube4 {
+  padding: 20px;
+}
+
+
+// .top-bar-section a {
+//     -moz-border-radius: 50px;
+//     -webkit-border-radius: 50px;
+//     border-radius: 50px;
+//     border: 0px solid #800000;
+//     -webkit-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.75);
+//     -moz-box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.75);
+//     box-shadow: inset 5px 5px 5px 0px rgba(0,0,0,0.75);
+//   }
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
