@@ -1,0 +1,438 @@
+/* Overall CSS references: https://ihatetomatoes.net/simple-parallax-scrolling-tutorial/, */
+
+html {
+  font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  -webkit-backface-visibility:hidden;
+}
+body {
+    background:url(../images/background.jpg) repeat fixed;
+    line-height: 1.4;
+    margin: 0;
+  }
+/* Page Titles */
+.title {
+  position: absolute;
+  padding-top: 7.5%;
+  padding-left: 75%;
+  font-size: 2.5em;
+}
+.title .titleInner {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 25px;
+  opacity:0.7;
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+/* Everything else in a section. */
+.hsContainer {
+  font-size: 1em;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 50px;
+}
+.innerContainer .img {
+  position: relative;
+  z-index: 999;
+  margin: 35px;
+  float: left;
+}
+img {
+  border: 10px solid rgba(0, 0, 0, .7);
+  border-radius: 25px;
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+.innerContainer {
+  max-width: 900px;
+  position: relative;
+  float: none;
+  display: block;
+  padding: 20px 20px;
+  background-color: rgba(0, 0, 0, .7);
+  color: #FFFFFF;
+  border-radius: 25px;
+/*  opacity:0.7;*/
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+  margin-right: auto;
+  margin-left: auto;
+}
+p {
+  font-size: .85em;
+  margin: 0;
+  text-indent: 3em;
+}
+/* Start of slide-2 CSS */
+.everything {
+  font-size: .75em;
+}
+.sectionHeader {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.rightFloat {
+  float: right;
+}
+br {
+   display: block;
+   margin: 10px 0;
+}
+.everything ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 1.2em;
+  height: auto;
+}
+.everything li {
+  line-height: 1.2em;
+  height: auto;
+}
+/* Start of slide-3 CSS */
+
+.workCubeContainer {
+  position: relative;
+  font-size: 1em;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.tableCellRow {
+  display: table-row;
+}
+.workCubeOuter {
+  display: table-cell;
+  z-index: -999;
+  vertical-align: middle;
+  padding: 50px 50px;
+  width: 50%;
+  overflow: hidden;
+}
+.workCubeInner {
+  height: auto;
+  width: auto;
+  max-width: 450px;
+  position: relative;
+  padding: 20px 20px;
+  color: #FFFFFF;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, .7);
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+.imgBlog {
+  z-index: 999;
+  position: relative;
+  right: 10px;
+  top: 10px;
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.workCubeText .header {
+  font-weight: bold;
+  font-size: 1.25em;
+}
+.workCubeText .dates {
+  font-weight: bold;
+  font-size: 1em;
+}
+.workCubeText .text {
+  font-size: .75em;
+}
+
+/* Start of page 4 CSS*/
+
+.contactBg {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  position: relative;
+  float: none;
+  display: block;
+  padding: 20px 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 25px;
+  opacity:0.7;
+  /* Opera */
+  -o-box-shadow: 5px 5px 5px #666;
+  /* IE */
+  -ms-box-shadow: 5px 5px 5px #666;
+  /* Mozilla FireFox */
+  -moz-box-shadow: 5px 5px 5px #666;
+  /* Google Chrome */
+  -webkit-box-shadow: 5px 5px 5px #666;
+  /* Normal */
+  box-shadow: 5px 5px 5px #666;
+}
+
+.contactTitleBox {
+  margin: 0px 50px;
+  color: #FFF;
+}
+.contactTitleBox .contactTitle {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.wrapper {
+  max-width:500px;
+  width:95%;
+  margin:0 auto;
+  position:relative;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea,
+#contact-form button[type="submit"]
+#contact-form {
+  text-shadow:0 1px 0 #FFF;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  background:#F9F9F9;
+  padding:25px;
+}
+#contact-form label span {
+  cursor:pointer;
+  color:#FFFFFF;
+  display:block;
+  margin:5px 0;
+  font-weight:900;
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea {
+  width:100%;
+  box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+  -webkit-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+  -moz-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+  border:1px solid #CCC;
+  background:#FFF;
+  margin:0 0 5px;
+  padding:10px;
+  border-radius:5px;
+}
+#contact-form input[type="text"]:hover,
+#contact-form input[type="email"]:hover,
+#contact-form input[type="tel"]:hover,
+#contact-form input[type="url"]:hover,
+#contact-form textarea:hover {
+  -webkit-transition:border-color 0.3s ease-in-out;
+  -moz-transition:border-color 0.3s ease-in-out;
+  transition:border-color 0.3s ease-in-out;
+  border:1px solid #AAA;
+}
+#contact-form textarea {
+  height:30px;
+  max-width:100%;
+}
+#contact-form button[type="submit"] {
+  cursor:pointer;
+  width:100%;
+  border:none;
+  background:#FFFFFF;
+  background-image: -webkit-linear-gradient(top, #adadad, #d9d9d9);
+  background-image: -moz-linear-gradient(top, #adadad, #d9d9d9);
+  background-image: -ms-linear-gradient(top, #adadad, #d9d9d9);
+  background-image: -o-linear-gradient(top, #adadad, #d9d9d9);
+  background-image: linear-gradient(to bottom, #adadad, #d9d9d9);
+  color:#000;
+  margin:0 0 5px;
+  padding:10px;
+  border-radius:5px;
+}
+#contact-form button[type="submit"]:hover {
+background-image: -webkit-linear-gradient(top, #c4c4c4, #d1d1d1);
+  background-image: -moz-linear-gradient(top, #c4c4c4, #d1d1d1);
+  background-image: -ms-linear-gradient(top, #c4c4c4, #d1d1d1);
+  background-image: -o-linear-gradient(top, #c4c4c4, #d1d1d1);
+  background-image: linear-gradient(to bottom, #c4c4c4, #d1d1d1);
+  -webkit-transition:background 0.3s ease-in-out;
+  -moz-transition:background 0.3s ease-in-out;
+  transition:background-color 0.3s ease-in-out;
+}
+#contact-form button[type="submit"]:active {
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline:0;
+  border:1px solid #999;
+}
+::-webkit-input-placeholder {
+    color:#888;
+}
+:-moz-placeholder {
+    color:#888;
+}
+::-moz-placeholder {
+    color:#888;
+}
+:-ms-input-placeholder {
+    color:#888;
+}
+.footer {
+    text-align: center;
+    position: relative;
+    font-size: 1em;
+    bottom: 40px;
+    z-index: 9999;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #000000;
+    /* Box Shadow */
+    /* Reference: http://css-tricks.com/snippets/css/css-box-shadow/ */
+    /* Opera */
+    -o-box-shadow: 5px 5px 5px #666;
+    /* IE */
+    -ms-box-shadow: 5px 5px 5px #666;
+    /* Mozilla FireFox */
+    -moz-box-shadow: 5px 5px 5px #666;
+    /* Google Chrome */
+    -webkit-box-shadow: 5px 5px 5px #666;
+    /* Normal */
+    box-shadow: 5px 5px 5px #666;
+}
+.footer .copyright {
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+}
+  /* navBar attributes */
+  /* CSS attributes that control the navBar */
+.slideNavBar {
+    font-size: 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 40px;
+    background-color: #000000;
+    /* Box Shadow */
+    /* Reference: http://css-tricks.com/snippets/css/css-box-shadow/ */
+    /* Opera */
+    -o-box-shadow: 5px 5px 5px #666;
+    /* IE */
+    -ms-box-shadow: 5px 5px 5px #666;
+    /* Mozilla FireFox */
+    -moz-box-shadow: 5px 5px 5px #666;
+    /* Google Chrome */
+    -webkit-box-shadow: 5px 5px 5px #666;
+    /* Normal */
+    box-shadow: 5px 5px 5px #666;
+}
+.slideNavBar .test{
+    display: table;
+    position: absolute;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    vertical-align: middle;
+    line-height: 40px;
+    left:50%;
+}
+
+.slideNavBar li {
+    text-align: center;
+    position: relative;
+    float: left;
+    color: #FFFFFF;
+}
+.slideNavBar span:hover {
+  background: #383838;
+  background-image: -webkit-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -moz-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -ms-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -o-linear-gradient(top, #383838, #3d3d3d);
+  background-image: linear-gradient(to bottom, #383838, #3d3d3d);
+  text-decoration: none;
+}
+/*.slideNavBar .hoverId1{
+  background: #383838;
+  background-image: -webkit-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -moz-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -ms-linear-gradient(top, #383838, #3d3d3d);
+  background-image: -o-linear-gradient(top, #383838, #3d3d3d);
+  background-image: linear-gradient(to bottom, #383838, #3d3d3d);
+  text-decoration: none;
+
+}*/
+.slideNavBar a {
+    display: block;
+    width: 90px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.slideNavBar span {
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 20px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+}
+.slideNavBar .logo {
+    display: table;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0px 10px;
+    vertical-align: middle;
+    line-height: 40px;
+    text-align: left;
+    position: relative;
+    float: left;
+    color: #FFFFFF;
+}

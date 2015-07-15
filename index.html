@@ -1,0 +1,300 @@
+<!-- The backbone of this project was based on the 'example' 'parallax background with constant speed' from the skrollr github: https://github.com/Prinzhorn/skrollr/tree/master/examples -->
+<!--	Author: Carter Wooten
+			Modification Date: 01/27/15 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<title>clwProductions</title>
+
+	<!-- Insertion of CSS file -->
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<!-- The heart of the skrollr in the HTML. Gives the look of a 'unique' scroll. -->
+<body data-0="background-position:0px 0px;" data-100000="background-position:0px -6000px;">
+	<!-- Creation of Navigation Bar -->
+	<div class="slideNavBar">
+			<ul class="logo">
+				<li>
+					clwProductions
+				</li>
+			</ul>
+      <ul id="slideNavId" class="test">
+        <li id="slide1" class="clickEventClass">
+          <a href="#" title="Go to About"><span class="hoverId1">About</span></a>
+        </li>
+        <li>
+          |
+        </li>
+        <li id="slide2" class="clickEventClass">
+          <a href="#" title="Go to Résumé"><span>Résumé</span></a>
+        </li>
+        <li>
+          |
+        </li>
+        <li id="slide3" class="clickEventClass">
+          <a href="#" title="Go to Work"><span>Work</span></a>
+        </li>
+        <li>
+          |
+        </li>
+        <li id="slide4" class="clickEventClass">
+          <a href="#" title="Go to Contact"><span>Contact</span></a>
+        </li>
+      </ul>
+    </div>
+	<div id="skrollr-body">
+<!-- 		<div id="center"> -->
+			<section id="slide-1" class="homeSlide">
+<!-- 				<span class="title">
+					<span class="titleInner">
+						About
+					</span>
+				</span> -->
+				<div class="hsContainer">
+					<div class="tableCell">
+						<div class="innerContainer">
+							<div class="img">
+							<img src="images/profilePicture.jpg" height="300px" width="300px"/>
+							</div>
+							<p>A little about myself. My name's Carter Wooten and I'm currently a senior student at the College of Charleston majoring in computer science. Though I will not be graduating this upcoming May because I have decided to take some additional classes to wrap a mathematics and physics minor into my degree. I've decided to put this web page together as a cross between an electronic résumé and a way for anyone to check up on what are my current academic, business, and personal pursuits. Also it will serve as another means for someone outside my current networked circle to get in touch with me (via the 'contact' section.) Lastly this website really helped me get into the world of web development. Having never taken a web development class I truly jumped off into the deep end but I would like to say that I came out 'somewhat' unscathed on the other end.
+							</p>
+							<br>
+							<p>With all that said, I suppose if you're here you want to know a little more about my academic/business interests. I'm currently employed at Elevation Healthcare in downtown Charleston, SC where I work as many hours as my fairly rigorous academic schedule allows. At Elevation Healthcare I wear many different hats of the software/hardware world and as I do so I try to learn as much as I can along the way. These hats range from testing new software that Elevation potentially wants to invest in, or building a simple GUIed application for excel sheet comparison. As for my academic and personal pursuits, I'm currently working on an open source music analysis project (beets) and hope to get to work on another project I have in mind after the creation of this website. Hope that serves somewhat as an introduction for myself and please don't hesitate to contact me if you desire more information.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="slide-2" class="homeSlide">
+<!-- 				<span class="title">
+					<span class="titleInner">
+						Résumé
+					</span>
+				</span> -->
+				<div class="hsContainer">
+					<div class="tableCell">
+						<span class="hsContent">
+							<span class="innerContainer">
+								<span class="everything">
+									<span class="sectionHeader">
+										EDUCATION
+									</span>
+									<span class="rightFloat">Expected: May 2015</span>
+										<br><b>College of Charleston</b>, Charleston, SC
+										<br><i><b>Bachelor of Science, Computer Science</b></i>
+										<br><b>Minor: Physics, Math</b>
+										<br>Major GPA 3.43
+										<br>
+									<span class="sectionHeader">
+										EXPERIENCE
+									</span>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp; <b>Elevation Healthcare</b>, Charleston, SC
+									<span class="rightFloat">August, 2014 - Present</span>
+									<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Software/Web Developer</i>
+									<br><ul><li>Hardware/software installations. Website creation with HTML, CSS, and JavaScript. In addition, writing software, presently in python, for Excel file manipulation via a GUI.</li></ul>
+									&nbsp;&nbsp;&nbsp;&nbsp; <b>Johannes Kepler University of Linz</b>, Linz, Austria
+									<span class="rightFloat">Study Abroad, Spring 2014</span>
+									<br><ul><li><b>Research:</b> We implemented and dealt with the topic of customization in web modeling languages, also known as the ability for web constructs to adapt to their hosting hardware (e.g., desktop versus mobile device.) Use of WebML with its accompanying software, WebRatio, was the basis of our research.</li></ul>
+									&nbsp;&nbsp;&nbsp;&nbsp; <b>Blue Cross Blue Shield of South Carolina</b>, Columbia, SC
+									<span class="rightFloat">Summer, 2013</span>
+									<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Software Developer</i>
+									<br><ul><li>Worked closely with the VP of IT to design software that manipulated internal BCBS data with dynamically updated data to produce an up-to-date comparison of health insurance offerings.
+									<ul><li>Application was written in VBA with some data collection capabilities (web scraping useful health care information off of related websites.)</li></ul></li></ul>
+									&nbsp;&nbsp;&nbsp;&nbsp; <b>Planet Systems Group</b>, Prague, Czech Republic
+									<span class="rightFloat">Summer, 2011</span>
+									<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Web Designer</i>
+									<br><ul><li>Designed proposal websites using FileMaker Pro for clients.
+									<ul><li>Worked closely with one of the client’s of PSG to create a low level demo of a gambling/betting website.</li></ul></li></ul>
+									<br>
+									<span class="sectionHeader">
+										COMPUTER AND LANGUAGE SKILLS
+									</span>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<b>Operating Systems:</b> Windows, Mac OS X, UNIX, Linux, Ubuntu
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<b>Programming Languages:</b> Java, Python, Assembly, Objective-C, MIPS, JavaScript (Jquery), Visual Basic
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<b>Tools:</b> Eclipse, FileMaker, Sublime Text, Xcode
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<b>Languages:</b> German (Elementary)
+									<br>
+									<span class="sectionHeader">
+										PROFESSIONAL SOCIETIES
+									</span>
+									<br>
+									<b>ACM</b>
+									<span class="rightFloat">2014 - Present</span>
+									<br>
+									<b>IEEE</b>
+									<span class="rightFloat">2014 - Present</span>
+								</span>
+							</span>
+						</span>
+					</div>
+				</div>
+			</section>
+			<section id="slide-3" class="homeSlide">
+<!-- 				<span class="title">
+					<span class="titleInner">
+						Work
+					</span>
+				</span> -->
+				<div class="workCubeContainer">
+						<div class="tableCellRow">
+							<div class="workCubeOuter">
+								<div class="workCubeInner">
+									<div class="imgBlog">
+									<a href="https://clwproductions.wordpress.com" target="_blank">
+										<img src="images/clwProductions.png" height="85px" width="85px"/>
+									</a>
+									</div>
+									<div class="workCubeText">
+										<span class="header">clwProductions Blog</span>
+										<br><br>
+										<span class="dates">Dates: 02/27/15 - Present</span>
+										<br><br>
+										<span class="text">
+										Description: This is my own personal blog. I intend on at minimum trying to post at least once a week on the topic of my current pursuits. The topics will most likely include the progress of my next side project, newsBits, and this ever evolving website.
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="workCubeOuter">
+								<div class="workCubeInner">
+									<div class="imgBlog">
+									<a href="https://www.linkedin.com/in/carterwooten" target="_blank">
+										<img src="images/LinkedIn.png" height="85px" width="85px"/>
+									</a>
+									</div>
+									<div class="workCubeText">
+										<span class="header">LinkedIn</span>
+										<br><br>
+										<span class="dates">Dates: 08/17/14 - Present</span>
+										<br><br>
+										<span class="text">
+										Description: This is my LinkedIn profile if your into those sort professional oriented social networks. I try to update/check it every now and then, but you'll probably have better luck contacting me through the form below.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tableCellRow">
+							<div class="workCubeOuter">
+								<div class="workCubeInner">
+									<div class="imgBlog">
+									<a href="https://github.com/wootencl" target="_blank">
+										<img src="images/gitHub.png" height="85px" width="85px"/>
+									</a>
+									</div>
+									<div class="workCubeText">
+										<span class="header">gitHub</span>
+										<br><br>
+										<span class="dates">Dates: 02/27/15 - Present</span>
+										<br><br>
+										<span class="text">
+										Description: This is my gitHub account. I'm trying to clean and post more and more of my academic and own personal projects/code so people can utilize them/it and in addition so i can use it as a referece point.
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="workCubeOuter">
+								<div class="workCubeInner">
+									<div class="imgBlog">
+									<a href="https://wootenclcsci462.wordpress.com" target="_blank">
+										<img src="images/csci462Blog.png" height="85px" width="85px"/>
+									</a>
+									</div>
+									<div class="workCubeText">
+										<span class="header">csci462 Blog</span>
+										<br><br>
+										<span class="dates">Dates: 01/12/15 - Present</span>
+										<br><br>
+										<span class="text">
+										Description: This is my blog for one of my final computer science courses at College of Charleston. Every now and then there are some intersting topics being discussed if you would like to check it out.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</section>
+			<section id="slide-4" class="homeSlide">
+<!-- 				<span class="title">
+					<span class="titleInner">
+						Contact
+					</span>
+				</span> -->
+				<div class="hsContainer">
+					<div class="tableCell">
+						<!-- <div class="innerContainer"> -->
+							<!-- Form -->
+							<div class="contactBg">
+				 	 			<div class="contactTitleBox">
+				 	 				<div class="contactTitle">Get in touch</div>
+				 	 				Fill in the form, and I'll get back to you within 24 hours. (Disclaimer: Incomplete, uses default mail client.)
+				 	 				<br>
+				 	 			</div>
+								<div class="wrapper">
+									<form name="contactForm" id="contact-form" action="#" method="post">
+										<div>
+											<label>
+												<span>Name: (required)</span>
+												<input placeholder="Please enter your name" type="text" tabindex="1" name="name" required>
+											</label>
+										</div>
+										<div>
+											<label>
+												<span>Email: (required)</span>
+												<input placeholder="Please enter your email address" type="email" tabindex="2" name="email" required>
+											</label>
+										</div>
+										<div>
+											<label>
+												<span>Telephone: (required)</span>
+												<input placeholder="Please enter your number" type="tel" tabindex="3" name="tele" required>
+											</label>
+										</div>
+										<div>
+											<label>
+												<span>Website:</span>
+												<input placeholder="Begin with http://" type="url" tabindex="4">
+											</label>
+										</div>
+										<div>
+											<label>
+												<span>Message: (required)</span>
+												<textarea placeholder="Include all the details you can" tabindex="5" name="message" required></textarea>
+											</label>
+										</div>
+										<br>
+										<div id="requiredError"></div>
+										<br>
+										<div>
+											<button name="submit" type="submit" id="contact-submit">Send Email</button>
+										</div>
+									</form>
+								</div>
+							</div>
+							<!-- /Form -->
+						<!-- </div> -->
+					</div>
+				</div>
+				<div class="footer">
+					<span class="copyright">Copyright &copy; clwProductions</span>
+				</div>
+			</section>
+	</div>
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/_main.js"></script>
+</body>
+
+</html>
