@@ -145,15 +145,26 @@ $(document).ready(function() {
     //Logic for section 3
     section3Reset();
     $(".mediumWrapId").unwrap();
-    $(".mediumWrapId").wrap("<div class='slide'></div>").wrap("<div class='small-11 small-centered columns'></div>");
+    $("#workCube1").unwrap();
+    $("#workCube3").unwrap();
+    $("#workCube1, #workCube2").wrapAll("<div class='slide'></div>");
+    $("#workCube3, #workCube4").wrapAll("<div class='slide'></div>");
+    $("#workCube1").wrap("<div class='row'></div>");
+    $("#workCube2").wrap("<div class='row'></div>");
+    $("#workCube3").wrap("<div class='row'></div>");
+    $("#workCube4").wrap("<div class='row'></div>");
+    $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-10 small-centered columns');
+    // $(".mediumWrapId").wrap("<div class='slide'></div>").wrap("<div class='small-11 small-centered columns'></div>");
     $(".nextPreviousSpan:eq(1)").html("<br><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
     $(".nextPreviousSpan:eq(2)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><br>");
-    $(document).foundation('equalizer', 'reflow');
+    // $(document).foundation('equalizer', 'reflow');
 
     //Overall Logic
     $("p").css("font-size", "0.9rem");
     temp.addClass("active");
     initFP();
+    $("#section3Row1").attr("data-equalizer","");
+    $(document).foundation('equalizer', 'reflow');
     //Click listeners
     $(".nextArrow").click(function() {
     $.fn.fullpage.moveSlideRight();

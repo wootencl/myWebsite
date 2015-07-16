@@ -1,5 +1,7 @@
 @import "settings";
 @import "foundation";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 // External Stylings:
 
@@ -24,6 +26,10 @@
 // My Stylings:
 body {
   background:url(../images/background.jpg) repeat fixed;
+  font-family: 'Open Sans', sans-serif;
+}
+h1, .top-bar-section ul li > a {
+  font-family: 'Titillium Web', sans-serif;
 }
 p {
   text-indent: 3em;
@@ -118,6 +124,32 @@ img:not(.nextArrow):not(.previousArrow) {
   position: relative;
   float:left;
 }
+// Section 2 CSS
+.everything {
+  font-size: .75em;
+}
+// .sectionHeader {
+//   font-weight: bold;
+//   font-size: 1.25em;
+// }
+.rightFloat {
+  float: right;
+}
+br {
+   display: block;
+   margin: 10px 0;
+}
+.everything ul {
+  font-size: 1em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  line-height: 1.2em;
+  height: auto;
+}
+.everything li {
+  line-height: 1.2em;
+  height: auto;
+}
 
 // Section 3 CSS
 .imgBlog {
@@ -149,7 +181,35 @@ img:not(.nextArrow):not(.previousArrow) {
 #workCube4 {
   padding: 20px;
 }
-
+// Section 4 CSS
+.footer {
+    text-align: center;
+    position: relative;
+    font-size: 1em;
+    bottom: 40px;
+    z-index: 9999;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #000000;
+    /* Box Shadow */
+    /* Reference: http://css-tricks.com/snippets/css/css-box-shadow/ */
+    /* Opera */
+    -o-box-shadow: 5px 5px 5px #666;
+    /* IE */
+    -ms-box-shadow: 5px 5px 5px #666;
+    /* Mozilla FireFox */
+    -moz-box-shadow: 5px 5px 5px #666;
+    /* Google Chrome */
+    -webkit-box-shadow: 5px 5px 5px #666;
+    /* Normal */
+    box-shadow: 5px 5px 5px #666;
+}
+.footer .copyright {
+  color: #FFFFFF;
+  display: inline-block;
+  vertical-align: middle;
+}
 
 // .top-bar-section a {
 //     -moz-border-radius: 50px;

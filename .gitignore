@@ -3,5 +3,5 @@
 *.DS_Store
 npm-debug.log
 /stylesheets/*
-/node_modules
+/node_modules/*
 /vendor
