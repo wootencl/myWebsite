@@ -132,6 +132,19 @@ $(document).ready(function() {
     $("#section3Row1").empty();
     $("#section3Row1").html($("#section3Row1").data("reset_html"));
   }
+  // Functions for the next/previous arrow involved in the slides
+  function nextPrevResize() {
+    $(".nextPreviousDiv").width( $(".workCubeText").width());
+  }
+  function arrowGenerator(arrows) {
+    if (arrows === "previous") {
+      return "<img class='leftFloat arrow' src='images/previousArrow.png' height='23px' width='23px'/>";
+    } else if (arrows === "next") {
+      return "<img class='rightFloat arrow' src='images/nextArrow.png' height='23px' width='23px'/>";
+    } else if (arrows === "both") {
+      return "<img class='leftFloat arrow' src='images/previousArrow.png' height='23px' width='23px'/><img class='rightFloat arrow' src='images/nextArrow.png' height='23px' width='23px'/>";
+    }
+  }
 
   //Function for dynamic medium page(s)
   function medium() {
@@ -155,8 +168,8 @@ $(document).ready(function() {
     $("#workCube4").wrap("<div class='row'></div>");
     $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-10 small-centered columns');
     // $(".mediumWrapId").wrap("<div class='slide'></div>").wrap("<div class='small-11 small-centered columns'></div>");
-    $(".nextPreviousSpan:eq(1)").html("<br><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
-    $(".nextPreviousSpan:eq(2)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><br>");
+    $(".nextPreviousDiv:eq(1)").html("<br><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
+    $(".nextPreviousDiv:eq(2)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><br>");
     // $(document).foundation('equalizer', 'reflow');
 
     //Overall Logic
@@ -211,10 +224,12 @@ $(document).ready(function() {
     $("#workCube3").unwrap();
     $("#workCube1, #workCube2, #workCube3, #workCube4").wrap("<div class='slide'></div>");
     $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-11 small-centered columns');
-    $(".nextPreviousSpan:eq(0)").html("<br><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
-    $(".nextPreviousSpan:eq(1)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
-    $(".nextPreviousSpan:eq(2)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
-    $(".nextPreviousSpan:eq(3)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><br>");
+    $(".nextPreviousDiv:eq(0)").html(arrowGenerator("next"));
+    $(".nextPreviousDiv:eq(1)").html(arrowGenerator("both"));
+    $(".nextPreviousDiv:eq(2)").html(arrowGenerator("both"));
+    $(".nextPreviousDiv:eq(3)").html(arrowGenerator("previous"));
+    $(".workCubeText").css("padding-bottom","23px");
+    nextPrevResize();
 
 
     //Overall Logic
@@ -224,10 +239,10 @@ $(document).ready(function() {
     $("#section3Row1").attr("data-equalizer","");
     $(document).foundation('equalizer', 'reflow');
     //Click listeners
-    $(".nextArrow").click(function() {
+    $(".arrow.rightFloat").click(function() {
     $.fn.fullpage.moveSlideRight();
     });
-    $(".previousArrow").click(function() {
+    $(".arrow.leftFloat").click(function() {
     $.fn.fullpage.moveSlideLeft();
     });
   }

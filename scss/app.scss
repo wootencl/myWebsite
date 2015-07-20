@@ -61,7 +61,7 @@ p {
   margin-bottom: 5px;
   float: left;
 }
-img:not(.nextArrow):not(.previousArrow) {
+img:not(.nextArrow):not(.previousArrow):not(.arrow) {
   border: 10px solid rgba(0, 0, 0, .7);
   border-radius: 25px;
   /* Opera */
@@ -74,6 +74,13 @@ img:not(.nextArrow):not(.previousArrow) {
   -webkit-box-shadow: 5px 5px 5px #666;
   /* Normal */
   box-shadow: 5px 5px 5px #666;
+}
+.nextPreviousDiv {
+  position: absolute;
+  bottom: 20px;
+}
+.arrow {
+  cursor: pointer;
 }
 .tab-bar {
   z-index: 30;
@@ -128,12 +135,11 @@ img:not(.nextArrow):not(.previousArrow) {
 .everything {
   font-size: .75em;
 }
-// .sectionHeader {
-//   font-weight: bold;
-//   font-size: 1.25em;
-// }
 .rightFloat {
   float: right;
+}
+.leftFloat {
+  float: left;
 }
 br {
    display: block;
