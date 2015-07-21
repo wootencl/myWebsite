@@ -107,11 +107,6 @@ $(document).ready(function() {
                           "<span class='rightFloat'>Expected: May 2016</span>"+
                         "</div>" +
                       "</div>";
-  // Initialize skrollr
-  var s = skrollr.init({
-    smoothScrolling: true,
-    forceHeight: false
-  });
 
   // FUNCTIONS:
   // JS for a sticky off-canvas menu
@@ -146,67 +141,6 @@ $(document).ready(function() {
     }
   }
 
-  //Function for dynamic medium page(s)
-  function medium() {
-    var temp = $(".section.active");
-    $.fn.fullpage.destroy('all');
-
-    // Logic for section 1
-    $("#section1Row1").empty();
-    $("#section1Row1").html(mediumResponse);
-
-    //Logic for section 3
-    section3Reset();
-    $(".mediumWrapId").unwrap();
-    $("#workCube1").unwrap();
-    $("#workCube3").unwrap();
-    $("#workCube1, #workCube2").wrapAll("<div class='slide'></div>");
-    $("#workCube3, #workCube4").wrapAll("<div class='slide'></div>");
-    $("#workCube1").wrap("<div class='row'></div>");
-    $("#workCube2").wrap("<div class='row'></div>");
-    $("#workCube3").wrap("<div class='row'></div>");
-    $("#workCube4").wrap("<div class='row'></div>");
-    $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-10 small-centered columns');
-    // $(".mediumWrapId").wrap("<div class='slide'></div>").wrap("<div class='small-11 small-centered columns'></div>");
-    $(".nextPreviousDiv:eq(1)").html("<br><img class='nextArrow' src='images/nextArrow.png' height='23px' width='23px'/><br>");
-    $(".nextPreviousDiv:eq(2)").html("<br><img class='previousArrow' src='images/previousArrow.png' height='23px' width='23px'/><br>");
-    // $(document).foundation('equalizer', 'reflow');
-
-    //Overall Logic
-    $("p").css("font-size", "0.9rem");
-    temp.addClass("active");
-    initFP();
-    $("#section3Row1").attr("data-equalizer","");
-    $(document).foundation('equalizer', 'reflow');
-    //Click listeners
-    $(".nextArrow").click(function() {
-    $.fn.fullpage.moveSlideRight();
-    });
-    $(".previousArrow").click(function() {
-    $.fn.fullpage.moveSlideLeft();
-    });
-  }
-
-  //Function for dynamic large page(s)
-  function large() {
-    //variable to keep track of current section
-    var temp = $(".section.active");
-    $.fn.fullpage.destroy('all');
-
-    // Logic for section 1
-    $("#section1Row1").empty();
-    $("#section1Row1").html(largeResponse);
-
-    //Logic for section 3
-    section3Reset();
-    $(document).foundation('equalizer', 'reflow');
-
-    //Overall Logic
-    $("p").css("font-size", "0.9rem");
-    temp.addClass("active");
-    initFP();
-  }
-
   //Function for dynamic small page(s)
   function small() {
     //variable to keep track of current section (+overall logic)
@@ -216,6 +150,9 @@ $(document).ready(function() {
     //Logic for section 1
     $("#section1Row1").empty();
     $("#section1Row1").html(smallResponse);
+
+    //Logic for section 2
+
 
     //Logic for section 3
     section3Reset();
@@ -247,6 +184,70 @@ $(document).ready(function() {
     });
   }
 
+  //Function for dynamic medium page(s)
+  function medium() {
+    var temp = $(".section.active");
+    $.fn.fullpage.destroy('all');
+
+    // Logic for section 1
+    $("#section1Row1").empty();
+    $("#section1Row1").html(mediumResponse);
+
+    //Logic for section 2
+
+
+    //Logic for section 3
+    section3Reset();
+    $(".mediumWrapId").unwrap();
+    $("#workCube1").unwrap();
+    $("#workCube3").unwrap();
+    $("#workCube1, #workCube2").wrapAll("<div class='slide'></div>");
+    $("#workCube3, #workCube4").wrapAll("<div class='slide'></div>");
+    $("#workCube1").wrap("<div class='row'></div>");
+    $("#workCube2").wrap("<div class='row'></div>");
+    $("#workCube3").wrap("<div class='row'></div>");
+    $("#workCube4").wrap("<div class='row'></div>");
+    $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-10 small-centered columns');
+    $(".nextPreviousDiv:eq(1)").html(arrowGenerator("next"));
+    $(".nextPreviousDiv:eq(2)").html(arrowGenerator("previous"));
+    $(".workCubeText").css("padding-bottom","23px");
+    nextPrevResize();
+
+    //Overall Logic
+    $("p").css("font-size", "0.9rem");
+    temp.addClass("active");
+    initFP();
+    $("#section3Row1").attr("data-equalizer","");
+    $(document).foundation('equalizer', 'reflow');
+    //Click listeners
+    $(".arrow.rightFloat").click(function() {
+    $.fn.fullpage.moveSlideRight();
+    });
+    $(".arrow.leftFloat").click(function() {
+    $.fn.fullpage.moveSlideLeft();
+    });
+  }
+
+  //Function for dynamic large page(s)
+  function large() {
+    //variable to keep track of current section
+    var temp = $(".section.active");
+    $.fn.fullpage.destroy('all');
+
+    // Logic for section 1
+    $("#section1Row1").empty();
+    $("#section1Row1").html(largeResponse);
+
+    //Logic for section 3
+    section3Reset();
+    $(document).foundation('equalizer', 'reflow');
+
+    //Overall Logic
+    $("p").css("font-size", "0.9rem");
+    temp.addClass("active");
+    initFP();
+  }
+
   // The size responder
   function sizeResponse() {
     if ($(window).width() > 795){
@@ -268,14 +269,18 @@ $(document).ready(function() {
   }, 1000 ) );
   $(window).trigger('resize');
 
-});
-
-//Initializing Foundation
-$(document).foundation({
+  //Initializing Foundation
+  $(document).foundation({
   offcanvas : {
     close_on_click : true
   },
   equalizer : {
     equalize_on_stack: true
   }
+  });
 });
+  // Initialize skrollr
+  var s = skrollr.init({
+    smoothScrolling: true,
+    forceHeight: false
+  });
