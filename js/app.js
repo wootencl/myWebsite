@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   // Storage of section3 HTML for reset purposes used in later functions
   $("#section3Row1").data("reset_html", $("#section3Row1").html());
+  $("#section2Row1").data("reset_html", $("#section2Row1").html());
 
   // Note: Basing my responsiveness on the two breakpoints: <= 795 && <= 500 (width | height)
   // String vars for first and second layer of responsiveness
@@ -122,14 +123,17 @@ $(document).ready(function() {
       scrollBar:true
     });
   }
-  // Section 3 Reset
-  function section3Reset() {
+  // Layout Reset
+  function layoutReset() {
     $("#section3Row1").empty();
+    $("#section2Row1").empty();
     $("#section3Row1").html($("#section3Row1").data("reset_html"));
+    $("#section2Row1").html($("#section2Row1").data("reset_html"));
   }
   // Functions for the next/previous arrow involved in the slides
   function nextPrevResize() {
-    $(".nextPreviousDiv").width( $(".workCubeText").width());
+    $(".nextPreviousDivSection3").width( $(".workCubeText").width());
+    $(".nextPreviousDivSection2").width( $("#educationBlock").width());
   }
   function arrowGenerator(arrows) {
     if (arrows === "previous") {
@@ -143,6 +147,9 @@ $(document).ready(function() {
 
   //Function for dynamic small page(s)
   function small() {
+    //reset the layout for DOM manipulation
+    layoutReset();
+
     //variable to keep track of current section (+overall logic)
     var temp = $(".section.active");
     $.fn.fullpage.destroy('all');
@@ -152,24 +159,41 @@ $(document).ready(function() {
     $("#section1Row1").html(smallResponse);
 
     //Logic for section 2
+    $("#educationBlock").unwrap();
+    $("#educationBlock").unwrap();
+    $("#educationBlock, #experienceHeader, .experienceSubblock:eq(0)").wrapAll("<div class='slide'></div>")
+                                                                                                 .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                                                                                 .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".experienceSubblock:eq(1), .experienceSubblock:eq(2)").wrapAll("<div class='slide'></div>")
+                                                                                                 .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                                                                                 .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".experienceSubblock:eq(3), #skillsBlock").wrapAll("<div class='slide'></div>")
+                                                                                                 .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                                                                                 .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $("#section2Row1 .innerContainer:eq(1)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
+    $("#section2Row1 .innerContainer:eq(2)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
+    $("#section2Row1 .innerContainer").children().last().css("padding-bottom","23px");
+    $("#section2Row1 .innerContainer").append("<div class='nextPreviousDivSection2'></div>");
+    $("#section2Row1 .nextPreviousDivSection2:eq(0)").html(arrowGenerator("next"));
+    $("#section2Row1 .nextPreviousDivSection2:eq(1)").html(arrowGenerator("both"));
+    $("#section2Row1 .nextPreviousDivSection2:eq(2)").html(arrowGenerator("previous"));
 
 
     //Logic for section 3
-    section3Reset();
     $(".mediumWrapId").unwrap();
     $("#workCube1").unwrap();
     $("#workCube3").unwrap();
     $("#workCube1, #workCube2, #workCube3, #workCube4").wrap("<div class='slide'></div>");
     $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-11 small-centered columns');
-    $(".nextPreviousDiv:eq(0)").html(arrowGenerator("next"));
-    $(".nextPreviousDiv:eq(1)").html(arrowGenerator("both"));
-    $(".nextPreviousDiv:eq(2)").html(arrowGenerator("both"));
-    $(".nextPreviousDiv:eq(3)").html(arrowGenerator("previous"));
+    $(".nextPreviousDivSection3:eq(0)").html(arrowGenerator("next"));
+    $(".nextPreviousDivSection3:eq(1)").html(arrowGenerator("both"));
+    $(".nextPreviousDivSection3:eq(2)").html(arrowGenerator("both"));
+    $(".nextPreviousDivSection3:eq(3)").html(arrowGenerator("previous"));
     $(".workCubeText").css("padding-bottom","23px");
-    nextPrevResize();
 
 
     //Overall Logic
+    nextPrevResize();
     $("p").css("font-size", "0.8rem");
     temp.addClass("active");
     initFP();
@@ -186,6 +210,9 @@ $(document).ready(function() {
 
   //Function for dynamic medium page(s)
   function medium() {
+    //reset the layout for DOM manipulation
+    layoutReset();
+
     var temp = $(".section.active");
     $.fn.fullpage.destroy('all');
 
@@ -194,10 +221,22 @@ $(document).ready(function() {
     $("#section1Row1").html(mediumResponse);
 
     //Logic for section 2
+    $("#educationBlock").unwrap();
+    $("#educationBlock").unwrap();
+    $("#educationBlock, #experienceHeader, .experienceSubblock:eq(0), .experienceSubblock:eq(1)").wrapAll("<div class='slide'></div>")
+                                                                                                 .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                                                                                 .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".experienceSubblock:eq(2), .experienceSubblock:eq(3), #skillsBlock").wrapAll("<div class='slide'></div>")
+                                                                                                 .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                                                                                 .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $("#section2Row1 .innerContainer:eq(1)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
+    $("#section2Row1 .innerContainer").children().last().css("padding-bottom","23px");
+    $("#section2Row1 .innerContainer").append("<div class='nextPreviousDivSection2'></div>");
+    $("#section2Row1 .nextPreviousDivSection2:eq(0)").html(arrowGenerator("next"));
+    $("#section2Row1 .nextPreviousDivSection2:eq(1)").html(arrowGenerator("previous"));
 
 
     //Logic for section 3
-    section3Reset();
     $(".mediumWrapId").unwrap();
     $("#workCube1").unwrap();
     $("#workCube3").unwrap();
@@ -208,12 +247,12 @@ $(document).ready(function() {
     $("#workCube3").wrap("<div class='row'></div>");
     $("#workCube4").wrap("<div class='row'></div>");
     $("#workCube1, #workCube2, #workCube3, #workCube4").attr('class', 'small-10 small-centered columns');
-    $(".nextPreviousDiv:eq(1)").html(arrowGenerator("next"));
-    $(".nextPreviousDiv:eq(2)").html(arrowGenerator("previous"));
+    $("#section3Row1 .nextPreviousDivSection3:eq(1)").html(arrowGenerator("next"));
+    $("#section3Row1 .nextPreviousDivSection3:eq(2)").html(arrowGenerator("previous"));
     $(".workCubeText").css("padding-bottom","23px");
-    nextPrevResize();
 
     //Overall Logic
+    nextPrevResize();
     $("p").css("font-size", "0.9rem");
     temp.addClass("active");
     initFP();
@@ -230,6 +269,9 @@ $(document).ready(function() {
 
   //Function for dynamic large page(s)
   function large() {
+    //reset the layout for DOM manipulation
+    layoutReset();
+
     //variable to keep track of current section
     var temp = $(".section.active");
     $.fn.fullpage.destroy('all');
@@ -239,7 +281,6 @@ $(document).ready(function() {
     $("#section1Row1").html(largeResponse);
 
     //Logic for section 3
-    section3Reset();
     $(document).foundation('equalizer', 'reflow');
 
     //Overall Logic

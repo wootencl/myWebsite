@@ -75,7 +75,7 @@ img:not(.nextArrow):not(.previousArrow):not(.arrow) {
   /* Normal */
   box-shadow: 5px 5px 5px #666;
 }
-.nextPreviousDiv {
+.nextPreviousDivSection3, .nextPreviousDivSection2 {
   position: absolute;
   bottom: 20px;
 }
@@ -132,7 +132,7 @@ img:not(.nextArrow):not(.previousArrow):not(.arrow) {
   float:left;
 }
 // Section 2 CSS
-.everything {
+#section2Row1 {
   font-size: .75em;
 }
 .rightFloat {
@@ -145,14 +145,14 @@ br {
    display: block;
    margin: 10px 0;
 }
-.everything ul {
+#section2Row1 ul {
   font-size: 1em;
   margin-top: 0px;
   margin-bottom: 0px;
   line-height: 1.2em;
   height: auto;
 }
-.everything li {
+#section2Row1 li {
   line-height: 1.2em;
   height: auto;
 }
