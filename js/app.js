@@ -172,7 +172,9 @@ $(document).ready(function() {
                                                                                                  .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
     $("#section2Row1 .innerContainer:eq(1)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
     $("#section2Row1 .innerContainer:eq(2)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
-    $("#section2Row1 .innerContainer").children().last().css("padding-bottom","23px");
+    $('#section2Row1 .innerContainer').each(function() {
+      $(this).children().last().css("padding-bottom","23px");
+    });
     $("#section2Row1 .innerContainer").append("<div class='nextPreviousDivSection2'></div>");
     $("#section2Row1 .nextPreviousDivSection2:eq(0)").html(arrowGenerator("next"));
     $("#section2Row1 .nextPreviousDivSection2:eq(1)").html(arrowGenerator("both"));
@@ -230,7 +232,9 @@ $(document).ready(function() {
                                                                                                  .wrapAll("<div class='small-11 small-centered columns'></div>")
                                                                                                  .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
     $("#section2Row1 .innerContainer:eq(1)").prepend($("#experienceHeader").clone().text("EXPERIENCE CONTINUED"));
-    $("#section2Row1 .innerContainer").children().last().css("padding-bottom","23px");
+    $('#section2Row1 .innerContainer').each(function() {
+      $(this).children().last().css("padding-bottom","23px");
+    });
     $("#section2Row1 .innerContainer").append("<div class='nextPreviousDivSection2'></div>");
     $("#section2Row1 .nextPreviousDivSection2:eq(0)").html(arrowGenerator("next"));
     $("#section2Row1 .nextPreviousDivSection2:eq(1)").html(arrowGenerator("previous"));
