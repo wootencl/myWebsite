@@ -9,6 +9,7 @@ $(document).ready(function() {
   // Storage of section3 HTML for reset purposes used in later functions
   $("#section3Row1").data("reset_html", $("#section3Row1").html());
   $("#section2Row1").data("reset_html", $("#section2Row1").html());
+  $("#section1Row1").data("reset_html", $("#section1Row1").html());
 
   // Note: Basing my responsiveness on the two breakpoints: <= 795 && <= 500 (width | height)
   // String vars for first and second layer of responsiveness
@@ -100,14 +101,6 @@ $(document).ready(function() {
                           "</div>" +
                         "</div>"+
                       "</div>";
-  //HTML vars for the layers of responsiveness (Section 2 - RESUME)
-  //Education HTML section
-  var educationHTML = "<div class='small-11 small-centered columns'>"+
-                        "<div class='innerContainer'>"+
-                          "<span class='sectionHeader'>EDUCATION</span>" +
-                          "<span class='rightFloat'>Expected: May 2016</span>"+
-                        "</div>" +
-                      "</div>";
 
   // FUNCTIONS:
   // JS for a sticky off-canvas menu
@@ -120,20 +113,25 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
       anchors:['about', 'resume', 'work','contact'],
       menu: '#myMenu',
-      scrollBar:true
+      scrollBar:true,
+      controlArrows: false,
+      loopHorizontal: false
     });
   }
   // Layout Reset
   function layoutReset() {
     $("#section3Row1").empty();
     $("#section2Row1").empty();
+    $("#section1Row1").empty();
     $("#section3Row1").html($("#section3Row1").data("reset_html"));
     $("#section2Row1").html($("#section2Row1").data("reset_html"));
+    $("#section1Row1").html($("#section1Row1").data("reset_html"));
   }
   // Functions for the next/previous arrow involved in the slides
   function nextPrevResize() {
     $(".nextPreviousDivSection3").width( $(".workCubeText").width());
     $(".nextPreviousDivSection2").width( $("#educationBlock").width());
+    $(".nextPreviousDivSection1").width( $(".descriptionBlock").width());
   }
   function arrowGenerator(arrows) {
     if (arrows === "previous") {
@@ -155,8 +153,26 @@ $(document).ready(function() {
     $.fn.fullpage.destroy('all');
 
     //Logic for section 1
-    $("#section1Row1").empty();
-    $("#section1Row1").html(smallResponse);
+    $("#profileImage").unwrap();
+    $("#profileImage").unwrap();
+    $("#profileImage, .descriptionBlock:eq(0)").wrapAll("<div class='slide'></div>")
+                                               .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                               .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".descriptionBlock:eq(1)").wrap("<div class='slide'></div>")
+                                .wrap("<div class='small-11 small-centered columns'></div>")
+                                .wrap("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".descriptionBlock:eq(2)").wrap("<div class='slide'></div>")
+                                .wrap("<div class='small-11 small-centered columns'></div>")
+                                .wrap("<div class='innerContainer' data-equalizer-watch></div>");
+    $('#section1Row1 .innerContainer').each(function() {
+      $(this).children().last().css("padding-bottom","23px");
+    });
+    $("#profileImage img").width(100);
+    $("#profileImage img").height(100);
+    $("#section1Row1 .innerContainer").append("<div class='nextPreviousDivSection1'></div>");
+    $("#section1Row1 .nextPreviousDivSection1:eq(0)").html(arrowGenerator("next"));
+    $("#section1Row1 .nextPreviousDivSection1:eq(1)").html(arrowGenerator("both"));
+    $("#section1Row1 .nextPreviousDivSection1:eq(2)").html(arrowGenerator("previous"));
 
     //Logic for section 2
     $("#educationBlock").unwrap();
@@ -219,8 +235,22 @@ $(document).ready(function() {
     $.fn.fullpage.destroy('all');
 
     // Logic for section 1
-    $("#section1Row1").empty();
-    $("#section1Row1").html(mediumResponse);
+    $("#profileImage").unwrap();
+    $("#profileImage").unwrap();
+    $("#profileImage, .descriptionBlock:eq(0)").wrapAll("<div class='slide'></div>")
+                                               .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                               .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $(".descriptionBlock:eq(1), .descriptionBlock:eq(2)").wrapAll("<div class='slide'></div>")
+                                               .wrapAll("<div class='small-11 small-centered columns'></div>")
+                                               .wrapAll("<div class='innerContainer' data-equalizer-watch></div>");
+    $('#section1Row1 .innerContainer').each(function() {
+      $(this).children().last().css("padding-bottom","23px");
+    });
+    $("#profileImage img").width(200);
+    $("#profileImage img").height(200);
+    $("#section1Row1 .innerContainer").append("<div class='nextPreviousDivSection1'></div>");
+    $("#section1Row1 .nextPreviousDivSection1:eq(0)").html(arrowGenerator("next"));
+    $("#section1Row1 .nextPreviousDivSection1:eq(1)").html(arrowGenerator("previous"));
 
     //Logic for section 2
     $("#educationBlock").unwrap();
@@ -280,14 +310,8 @@ $(document).ready(function() {
     var temp = $(".section.active");
     $.fn.fullpage.destroy('all');
 
-    // Logic for section 1
-    $("#section1Row1").empty();
-    $("#section1Row1").html(largeResponse);
-
-    //Logic for section 3
-    $(document).foundation('equalizer', 'reflow');
-
     //Overall Logic
+    $(document).foundation('equalizer', 'reflow');
     $("p").css("font-size", "0.9rem");
     temp.addClass("active");
     initFP();

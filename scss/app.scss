@@ -55,13 +55,13 @@ p {
   /* Normal */
   box-shadow: 5px 5px 5px #666;
 }
-.innerContainer .img {
+.innerContainer #profileImage {
   position: relative;
   margin-right: 15px;
   margin-bottom: 5px;
   float: left;
 }
-img:not(.nextArrow):not(.previousArrow):not(.arrow) {
+img:not(.arrow) {
   border: 10px solid rgba(0, 0, 0, .7);
   border-radius: 25px;
   /* Opera */
@@ -75,7 +75,7 @@ img:not(.nextArrow):not(.previousArrow):not(.arrow) {
   /* Normal */
   box-shadow: 5px 5px 5px #666;
 }
-.nextPreviousDivSection3, .nextPreviousDivSection2 {
+.nextPreviousDivSection3, .nextPreviousDivSection2, .nextPreviousDivSection1 {
   position: absolute;
   bottom: 20px;
 }

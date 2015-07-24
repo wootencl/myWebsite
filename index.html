@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>clwProductions</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <!-- Foundation Style Sheet -->
     <link rel="stylesheet" href="stylesheets/app.css" />
     <!-- Additional CSS files -->
@@ -27,7 +29,6 @@
                 <li data-menuanchor="resume"><a href="#resume">Résumé</a></li>
                 <li data-menuanchor="work"><a href="#work">Work</a></li>
                 <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-
               </ul>
             </section>
         </nav>
@@ -61,9 +62,18 @@
             <div id="skrollr-body">
                 <div id="fullpage">
                     <div class="section">
-                        <div class="row" id="section1Row1">
-                            <!-- jQuery Genertated HTML will go here -->
-                            <!-- Going to refactor later to be more similiar to the following section(s) -->
+                        <div class="row" id="section1Row1" data-equalizer>
+                            <div class="small-11 small-centered columns">
+                              <div class="innerContainer">
+                                <div id="profileImage">
+                                    <img src="images/profilePicture.jpg" height="300px" width="300px"/>
+                                </div>
+                                <div class="descriptionBlock"><p>A little about myself. My name's Carter Wooten and I'm currently a senior student at the College of Charleston studying computer science, mathematics, and physics. I've decided to put this web page together as a cross between an electronic résumé and a way for anyone to check up on what are my current academic, business, and personal pursuits. Also it will serve as another means for someone outside my current networked circle to get in touch with me (via the 'contact' section.) Lastly this website really helped me get into the world of web development. Particularly with this sites second version I learned a lot about front-end development in regards to the scripting side of things via jQuery. As I'm still fairly new to the web development game I hope this site will become better and better with each version.</p></div>
+                                <div class="descriptionBlock"><p>With all that said, I suppose if you're here you want to know a little more about my academic/business interests. I'm currently employed at Elevation Healthcare and finishing up an internship at PeopleMatter both located in downtown Charleston, SC. At Elevation Healthcare I wear many different hats of the software/hardware world and as I do so I try to learn as much as I can along the way. Some of these hats range from testing new software that Elevation potentially wants to invest in to building very simple GUIed applications with python. At PeopleMatter I'm working through their APIs and am improving upon each one's corresponding documentation. I'm doing this by optimizing the engine that generates that API documentation and by ensuring correct parameters/returns through API calls.</p></div>
+                                <div class="descriptionBlock"><p>As for my academic and personal pursuits they change each time I think I find the new new thing. As I'm sure you have deducted I'm currently working (though lesser so now) on this website and am hoping to improve it with each iteration. In addition I plan in the near future to begin work on another project I have in mind that involves mobile application development and data mining. If your interested in more details I'd refer you to my blog of which you can find the link below. Hope that serves somewhat as an introduction for myself and please don't hesitate to contact me if you desire more information.</p></div>
+
+                              </div>
+                            </div>
                         </div>
                     </div>
                     <div class="section">
