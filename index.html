@@ -14,6 +14,10 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body data-0="background-position:0px 0px;" data-2800="background-position:0px -200px;">
+    <!-- loading Gif -->
+    <!-- <div id="loading">
+        <img id="loading-image" src="images/loading.gif" alt="Loading..." />
+    </div> -->
     <!-- top-bar for medium-large devices -->
     <div class="fixed hide-for-small-only">
         <nav class="top-bar" data-topbar role="navigation">
@@ -165,7 +169,7 @@
                                                 <span class="dates">Dates: 02/27/15 - Present</span>
                                                 <br><br>
                                                 <span class="text">
-                                                Description: This is my own personal blog. I intend on at minimum trying to post at least once a week on the topic of my current pursuits. The topics will most likely include the progress of my next side project, newsBits, and this ever evolving website.
+                                                Description: This is my own personal blog. I intend on at minimum trying to post at least once a week on the topic of my current pursuits. The topics will most likely include the progress of my next side project and this ever evolving website.
                                                 </span>
                                             </div>
                                             <div class="nextPreviousDivSection3"></div>
@@ -235,7 +239,60 @@
                         </div>
                     </div>
                     <div class="section">
-                        Contact Section
+                        <div class="row" id="section4Row1">
+                            <div class="small-8 small-centered columns">
+                              <div class="innerContainer">
+                                <form id="ajax-contact" action="mail.php" method="POST">
+                                    <div class="row">
+                                        <div id="contactTitle" class="small-12 columns">
+                                            Get in touch
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="contactDescription" class="small-11 small-centered columns">
+                                            If you're interested in my work and wish to inquire further use this form and I'll get back to you as soon as possible.
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-6 columns">
+                                          <label>*Name
+                                            <input type="text" name="name" placeholder="What's your name?" />
+                                          </label>
+                                        </div>
+                                        <div class="small-6 columns">
+                                          <label>*Email
+                                            <input type="text" name="email" placeholder="And your email?" />
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-6 columns">
+                                          <label>Phone
+                                            <input type="text" name="phone" placeholder="Phone number?" />
+                                          </label>
+                                        </div>
+                                        <div class="small-6 columns">
+                                          <label>Website
+                                            <input type="text" name="website" placeholder="Website?" />
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <label>*Message
+                                                <textarea name="message" placeholder="Comments, thoughts or questions?"></textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <button id="submitButton" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

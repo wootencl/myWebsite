@@ -24,11 +24,12 @@
 }
 
 // My Stylings:
+
 body {
   background:url(../images/background.jpg) repeat fixed;
   font-family: 'Open Sans', sans-serif;
 }
-h1, .top-bar-section ul li > a {
+input[type="submit"], h1, .top-bar-section ul li > a {
   font-family: 'Titillium Web', sans-serif;
 }
 p {
@@ -58,8 +59,9 @@ p {
 .innerContainer #profileImage {
   position: relative;
   margin-right: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   float: left;
+  max-width: none;
 }
 img:not(.arrow) {
   border: 10px solid rgba(0, 0, 0, .7);
@@ -188,6 +190,41 @@ br {
   padding: 20px;
 }
 // Section 4 CSS
+label {
+  color: #FFFFFF;
+}
+#contactTitle {
+  font-size: 2.5rem;
+}
+#contactDescription {
+  font-size: 1.0rem;
+  margin-bottom: 15px;
+}
+#section4Row1 input, textarea {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#submitButton {
+  float: right;
+  font-size: 1.1em;
+  background: #666666;
+  color: rgb(255, 255, 255);
+  height: 2rem;
+  line-height: 2rem;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border: none;
+  padding: 0px 10px;
+}
+#submitButton:hover {
+  background-color: #8D8D8D;
+}
+input {
+  font-size: inherit;
+}
 .footer {
     text-align: center;
     position: relative;

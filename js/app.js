@@ -2,6 +2,11 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 //NOTES: I know there's a lot of refactoring to be done but this is an initial pass through.
 // Mostly to help me learn jquery.
+
+// Loading Functions
+// $(window).load(function() {
+//   $("#loading").hide();
+// });
 $(document).ready(function() {
   // Variables
   var menu = $('.left-off-canvas-menu');
@@ -75,8 +80,8 @@ $(document).ready(function() {
     $('#section1Row1 .innerContainer').each(function() {
       $(this).children().last().css("padding-bottom","23px");
     });
-    $("#profileImage img").width(100);
-    $("#profileImage img").height(100);
+    $("#profileImage img").width(80);
+    $("#profileImage img").height(80);
     $("#section1Row1 .innerContainer").append("<div class='nextPreviousDivSection1'></div>");
     $("#section1Row1 .nextPreviousDivSection1:eq(0)").html(arrowGenerator("next"));
     $("#section1Row1 .nextPreviousDivSection1:eq(1)").html(arrowGenerator("both"));
@@ -120,7 +125,8 @@ $(document).ready(function() {
 
     //Overall Logic
     nextPrevResize();
-    $("p").css("font-size", "0.8rem");
+    $("p").css("font-size", "0.5rem");
+    $("body").css("font-size", "0.8rem");
     temp.addClass("active");
     initFP();
     $("#section3Row1").attr("data-equalizer","");
@@ -195,7 +201,8 @@ $(document).ready(function() {
 
     //Overall Logic
     nextPrevResize();
-    $("p").css("font-size", "0.9rem");
+    $("p").css("font-size", "0.7rem");
+    $("body").css("font-size", "0.9rem");
     temp.addClass("active");
     initFP();
     $("#section3Row1").attr("data-equalizer","");
@@ -220,7 +227,7 @@ $(document).ready(function() {
 
     //Overall Logic
     $(document).foundation('equalizer', 'reflow');
-    $("p").css("font-size", "0.9rem");
+    $("p").css("font-size", "0.8em");
     temp.addClass("active");
     initFP();
   }
@@ -261,3 +268,33 @@ $(document).ready(function() {
     smoothScrolling: true,
     forceHeight: false
   });
+
+//Contact Form JS
+// With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
+$(function() {
+  // Get the form.
+  var form = $('#ajax-contact');
+  $("#ajax-contact").submit(function(event) {
+    // Serialize the form data.
+    var formData = $(form).serialize();
+
+    // Submit the form using AJAX.
+    $.ajax({
+      type: 'POST',
+      url: $("#ajax-contact").attr('action'),
+      data: formData
+    })
+    .done(function(response) {
+      alert("success");
+      // Clear the form.
+      $('#name').val('');
+      $('#email').val('');
+      $('#phone').val('');
+      $('#website').val('');
+      $('#message').val('');
+    })
+    .fail(function(data) {
+      alert("error");
+    });
+  });
+});
