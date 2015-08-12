@@ -63,7 +63,7 @@ p {
   float: left;
   max-width: none;
 }
-img:not(.arrow) {
+img:not(.arrow):not(.successEmail) {
   border: 10px solid rgba(0, 0, 0, .7);
   border-radius: 25px;
   /* Opera */
@@ -143,10 +143,10 @@ img:not(.arrow) {
 .leftFloat {
   float: left;
 }
-br {
-   display: block;
-   margin: 10px 0;
-}
+// br {
+//    display: block;
+//    margin: 10px 0;
+// }
 #section2Row1 ul {
   font-size: 1em;
   margin-top: 0px;
@@ -224,6 +224,24 @@ label {
 }
 input {
   font-size: inherit;
+}
+#section4Row1 input.error, textarea.error {
+  border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -khtml-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+}
+#section4Row1 small.error {
+  border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -khtml-border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
+}
+.reveal-modal {
+  text-align: center;
+}
+small.error {
+  display: none;
 }
 .footer {
     text-align: center;

@@ -242,7 +242,7 @@
                         <div class="row" id="section4Row1">
                             <div class="small-8 small-centered columns">
                               <div class="innerContainer">
-                                <form id="ajax-contact" action="mail.php" method="POST">
+                                <form id="ajax-contact" action="http://localhost:8888/clwProductions/mail.php" method="POST">
                                     <div class="row">
                                         <div id="contactTitle" class="small-12 columns">
                                             Get in touch
@@ -255,32 +255,35 @@
                                     </div>
                                     <div class="row">
                                         <div class="small-6 columns">
-                                          <label>*Name
-                                            <input type="text" name="name" placeholder="What's your name?" />
+                                          <label id="nameLabel">*Name
+                                            <input id="name" type="text" name="name" placeholder="What's your name?" />
+                                            <small class='error'>Name Required</small>
                                           </label>
                                         </div>
                                         <div class="small-6 columns">
-                                          <label>*Email
-                                            <input type="text" name="email" placeholder="And your email?" />
+                                          <label id="emailLabel">*Email
+                                            <input id="email" type="text" name="email" placeholder="And your email?" />
+                                            <small class='error'>Email Required</small>
                                           </label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="small-6 columns">
-                                          <label>Phone
-                                            <input type="text" name="phone" placeholder="Phone number?" />
+                                          <label >Phone
+                                            <input id="phone" type="text" name="phone" placeholder="Phone number?" />
                                           </label>
                                         </div>
                                         <div class="small-6 columns">
                                           <label>Website
-                                            <input type="text" name="website" placeholder="Website?" />
+                                            <input id="website" type="text" name="website" placeholder="Website?" />
                                           </label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="small-12 columns">
-                                            <label>*Message
-                                                <textarea name="message" placeholder="Comments, thoughts or questions?"></textarea>
+                                            <label id="messageLabel">*Message
+                                                <textarea id="message" name="message" placeholder="Comments, thoughts or questions?"></textarea>
+                                                <small class='error'>Message Required</small>
                                             </label>
                                         </div>
                                     </div>
@@ -290,6 +293,15 @@
                                         </div>
                                     </div>
                                 </form>
+                                <!-- Reveal Modal -->
+                                <div id="emailSuccessModal" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                                    <h2 id="modalTitle">Success!</h2>
+                                    <div id="emailSuccessImage">
+                                        <img class="successEmail" src="images/successEmail.png" height="150px" width="150px"/>
+                                    </div>
+                                    <p>Your email has been sent succefully. Thank you for your interest!</p>
+                                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                                </div>
                               </div>
                             </div>
                         </div>

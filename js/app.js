@@ -1,6 +1,6 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-//NOTES: I know there's a lot of refactoring to be done but this is an initial pass through.
+//NOTES: I know there's a lot of refactoring (particularly encapsulation and OO practices) to be done but this is an initial pass through.
 // Mostly to help me learn jquery.
 
 // Loading Functions
@@ -10,8 +10,11 @@
 $(document).ready(function() {
   // Variables
   var menu = $('.left-off-canvas-menu');
+  var form = $('#ajax-contact');
+  var contactForm = $("#section4Row1").html();
 
   // Storage of section3 HTML for reset purposes used in later functions
+  $("#section4Row1").data("reset_html", $("#section4Row1").html());
   $("#section3Row1").data("reset_html", $("#section3Row1").html());
   $("#section2Row1").data("reset_html", $("#section2Row1").html());
   $("#section1Row1").data("reset_html", $("#section1Row1").html());
@@ -54,6 +57,30 @@ $(document).ready(function() {
     } else if (arrows === "both") {
       return "<img class='leftFloat arrow' src='images/previousArrow.png' height='23px' width='23px'/><img class='rightFloat arrow' src='images/nextArrow.png' height='23px' width='23px'/>";
     }
+  }
+  // Function to add error to Contact Form
+  function checkContactForm() {
+      if ($("#name").val().length===0 && !($("#nameLabel input").hasClass("error"))) {
+        $("input#name").addClass("error");
+        $("#nameLabel small.error").css("display","block");
+      } else if ($("#name").val().length>0 && $("#nameLabel input").hasClass("error")) {
+        $("input#name").removeClass("error");
+        $("#nameLabel small.error").css("display","none");
+      }
+      if ($("#email").val().length===0 && !($("#emailLabel input").hasClass("error"))) {
+        $("input#email").addClass("error");
+        $("#emailLabel small.error").css("display","block");
+      } else if ($("#email").val().length>0 && $("#emailLabel input").hasClass("error")) {
+        $("input#email").removeClass("error");
+        $("#emailLabel small.error").css("display","none");
+      }
+      if ($("#message").val().length===0 && !($("#messageLabel textarea").hasClass("error"))) {
+        $("textarea#message").addClass("error");
+        $("#messageLabel small.error").css("display","block");
+      } else if ($("#message").val().length>0 && $("#messageLabel textarea").hasClass("error")) {
+        $("textarea#message").removeClass("error");
+        $("#messageLabel small.error").css("display","none");
+      }
   }
 
   //Function for dynamic small page(s)
@@ -228,6 +255,7 @@ $(document).ready(function() {
     //Overall Logic
     $(document).foundation('equalizer', 'reflow');
     $("p").css("font-size", "0.8em");
+    $("body").css("font-size", "1em");
     temp.addClass("active");
     initFP();
   }
@@ -255,26 +283,18 @@ $(document).ready(function() {
 
   //Initializing Foundation
   $(document).foundation({
-  offcanvas : {
-    close_on_click : true
-  },
-  equalizer : {
-    equalize_on_stack: true
-  }
+    offcanvas : {
+      close_on_click : true
+    },
+    equalizer : {
+      equalize_on_stack: true
+    }
   });
-});
-  // Initialize skrollr
-  var s = skrollr.init({
-    smoothScrolling: true,
-    forceHeight: false
-  });
-
-//Contact Form JS
-// With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
-$(function() {
+  //Contact Form JS
+  // With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
   // Get the form.
-  var form = $('#ajax-contact');
   $("#ajax-contact").submit(function(event) {
+    event.preventDefault();
     // Serialize the form data.
     var formData = $(form).serialize();
 
@@ -285,16 +305,22 @@ $(function() {
       data: formData
     })
     .done(function(response) {
-      alert("success");
+      checkContactForm();
       // Clear the form.
-      $('#name').val('');
-      $('#email').val('');
-      $('#phone').val('');
-      $('#website').val('');
-      $('#message').val('');
+      $("#name").val('');
+      $("#email").val('');
+      $("#phone").val('');
+      $("#website").val('');
+      $("#message").val('');
+      $("#emailSuccessModal").foundation('reveal', 'open');
     })
     .fail(function(data) {
-      alert("error");
+      checkContactForm();
     });
   });
 });
+  // Initialize skrollr
+  var s = skrollr.init({
+    smoothScrolling: true,
+    forceHeight: false
+  });
