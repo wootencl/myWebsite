@@ -1,7 +1,7 @@
-/bower_components/*
-/.sass-cache/*
+/bower_components
 *.DS_Store
 npm-debug.log
-/stylesheets/*
-node_modules/
+node_modules
 /vendor
+.sass-cache
+.tmp

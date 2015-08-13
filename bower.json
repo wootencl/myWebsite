@@ -5,6 +5,7 @@
   "dependencies": {
     "foundation": "zurb/bower-foundation",
     "fullpage.js": "~2.6.7",
-    "skrollr": "~0.6.30"
+    "skrollr": "~0.6.30",
+    "underscore": "~1.8.3"
   }
 }
