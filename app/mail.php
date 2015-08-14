@@ -10,7 +10,7 @@
       // Check that data was sent to the mailer.
       if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
           // Set a 400 (bad request) response code and exit.
-          http_response_code(400);
+          header('X-PHP-Response-Code: 400', true, 400);
           exit;
       }
 
@@ -31,14 +31,14 @@
       // Send the email.
       if (mail($recipient, $subject, $email_content, $email_headers)) {
           // Set a 200 (okay) response code.
-          http_response_code(200);
+          header('X-PHP-Response-Code: 200', true, 200);
       } else {
           // Set a 500 (internal server error) response code.
-          http_response_code(500);
+          header('X-PHP-Response-Code: 500', true, 500);
       }
 
   } else {
       // Not a POST request, set a 403 (forbidden) response code.
-      http_response_code(403);
+      header('X-PHP-Response-Code: 403', true, 403);
   }
 ?>

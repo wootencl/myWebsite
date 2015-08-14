@@ -1,1 +1,4 @@
 
+[submodule "dist"]
+	path = dist
+	url = webserver:/var/git/dist.git
