@@ -36,9 +36,11 @@ $(document).ready(function() {
   }
   // Layout Reset
   function layoutReset() {
+    $("#section4Row1").empty();
     $("#section3Row1").empty();
     $("#section2Row1").empty();
     $("#section1Row1").empty();
+    $("#section4Row1").html($("#section4Row1").data("reset_html"));
     $("#section3Row1").html($("#section3Row1").data("reset_html"));
     $("#section2Row1").html($("#section2Row1").data("reset_html"));
     $("#section1Row1").html($("#section1Row1").data("reset_html"));
@@ -290,6 +292,7 @@ $(document).ready(function() {
       equalize_on_stack: true
     }
   });
+
   //Contact Form JS
   // With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
   // Get the form.
@@ -319,7 +322,7 @@ $(document).ready(function() {
     });
   });
 });
-  // Initialize skrollr
+// Initialize skrollr
   var s = skrollr.init({
     smoothScrolling: true,
     forceHeight: false
