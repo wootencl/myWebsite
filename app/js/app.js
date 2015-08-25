@@ -10,7 +10,6 @@
 $(document).ready(function() {
   // Variables
   var menu = $('.left-off-canvas-menu');
-  var form = $('#ajax-contact');
   var contactForm = $("#section4Row1").html();
 
   // Storage of section3 HTML for reset purposes used in later functions
@@ -85,6 +84,32 @@ $(document).ready(function() {
       }
   }
 
+  var ajaxFormSubmission = function() {
+    // Serialize the form data.
+    var formData = $("#ajax-contact").serialize();
+
+    // Submit the form using AJAX.
+    $.ajax({
+      type: 'POST',
+      url: $("#ajax-contact").attr('action'),
+      data: formData
+    })
+    .done(function(response) {
+      checkContactForm();
+      // Clear the form.
+      $("#name").val('');
+      $("#email").val('');
+      $("#phone").val('');
+      $("#website").val('');
+      $("#message").val('');
+      $("#emailSuccessModal").foundation('reveal', 'open');
+    })
+    .fail(function(data) {
+      checkContactForm();
+    });
+    return false;
+  }
+
   //Function for dynamic small page(s)
   function small() {
     //reset the layout for DOM manipulation
@@ -150,6 +175,17 @@ $(document).ready(function() {
     $(".nextPreviousDivSection3:eq(2)").html(arrowGenerator("both"));
     $(".nextPreviousDivSection3:eq(3)").html(arrowGenerator("previous"));
     $(".workCubeText").css("padding-bottom","23px");
+
+    //Logic for section 4
+    $("#contactFormColumnClass").attr("class","small-11 small-centered columns");
+    $("#contactTitle").css("font-size", "1.5rem");
+    $("#contactDescription").css("font-size", "0.8rem");
+    $("#submitButton").css("font-size", "0.8rem");
+    $("#section4Row1 label").css("font-size", "0.7rem");
+    $("#section4Row1 input").css("font-size", "16px");
+    $("#section4Row1 textarea").css("font-size", "16px");
+    $("#submitButton").css("font-size", "0.8rem");
+    $("#section4Row1 small.error").css("font-size", "0.7rem");
 
 
     //Overall Logic
@@ -293,37 +329,17 @@ $(document).ready(function() {
     }
   });
 
-  //Contact Form JS
-  // With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
-  // Get the form.
-  $("#ajax-contact").submit(function(event) {
-    event.preventDefault();
-    // Serialize the form data.
-    var formData = $(form).serialize();
-
-    // Submit the form using AJAX.
-    $.ajax({
-      type: 'POST',
-      url: $("#ajax-contact").attr('action'),
-      data: formData
-    })
-    .done(function(response) {
-      checkContactForm();
-      // Clear the form.
-      $("#name").val('');
-      $("#email").val('');
-      $("#phone").val('');
-      $("#website").val('');
-      $("#message").val('');
-      $("#emailSuccessModal").foundation('reveal', 'open');
-    })
-    .fail(function(data) {
-      checkContactForm();
-    });
-  });
-});
 // Initialize skrollr
   var s = skrollr.init({
     smoothScrolling: true,
-    forceHeight: false
+    forceHeight: false,
+    mobileCheck: function() {
+                //hack - forces mobile version to be off
+                return false;
+            }
   });
+  //Contact Form JS
+  // With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
+  // Get the form.
+  $("#section4Row1").on("submit", "#ajax-contact", ajaxFormSubmission);
+});
