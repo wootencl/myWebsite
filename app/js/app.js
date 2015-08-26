@@ -33,6 +33,17 @@ $(document).ready(function() {
       loopHorizontal: false
     });
   }
+  var initSkrollr = function() {
+    // Initialize skrollr
+    var s = skrollr.init({
+      smoothScrolling: true,
+      forceHeight: false,
+      mobileCheck: function() {
+                  //hack - forces mobile version to be off
+                  return false;
+              }
+    });
+  }
   // Layout Reset
   function layoutReset() {
     $("#section4Row1").empty();
@@ -193,6 +204,17 @@ $(document).ready(function() {
     $("p").css("font-size", "0.5rem");
     $("body").css("font-size", "0.8rem");
     temp.addClass("active");
+
+    // temporary fix. Will fix when i rehaul
+    var s = skrollr.init({
+      smoothScrolling: true,
+      forceHeight: false,
+      mobileCheck: function() {
+                  //hack - forces mobile version to be off
+                  return false;
+              }
+    });
+
     initFP();
     $("#section3Row1").attr("data-equalizer","");
     $(document).foundation('equalizer', 'reflow');
@@ -203,6 +225,8 @@ $(document).ready(function() {
     $(".arrow.leftFloat").click(function() {
     $.fn.fullpage.moveSlideLeft();
     });
+    $("body").attr("data-2800","background-position: 0px " + ($(document).height()-$(window).height()).toString() + "px")
+    s.refresh();
   }
 
   //Function for dynamic medium page(s)
@@ -269,6 +293,7 @@ $(document).ready(function() {
     $("p").css("font-size", "0.7rem");
     $("body").css("font-size", "0.9rem");
     temp.addClass("active");
+    initSkrollr();
     initFP();
     $("#section3Row1").attr("data-equalizer","");
     $(document).foundation('equalizer', 'reflow');
@@ -295,6 +320,7 @@ $(document).ready(function() {
     $("p").css("font-size", "0.8em");
     $("body").css("font-size", "1em");
     temp.addClass("active");
+    initSkrollr();
     initFP();
   }
 
@@ -329,15 +355,7 @@ $(document).ready(function() {
     }
   });
 
-// Initialize skrollr
-  var s = skrollr.init({
-    smoothScrolling: true,
-    forceHeight: false,
-    mobileCheck: function() {
-                //hack - forces mobile version to be off
-                return false;
-            }
-  });
+
   //Contact Form JS
   // With help from tutorial: http://blog.teamtreehouse.com/create-ajax-contact-form
   // Get the form.
