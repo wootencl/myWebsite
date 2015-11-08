@@ -29,7 +29,7 @@ body {
   background:url(../images/background.jpg) no-repeat center center fixed;
   font-family: 'Open Sans', sans-serif;
 }
-input[type="submit"], h1, .top-bar-section ul li > a {
+input[type="submit"], h1, .top-bar-section ul li > a, #footer {
   font-family: 'Titillium Web', sans-serif;
 }
 p {
@@ -206,6 +206,10 @@ label {
   -khtml-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
+
+#message {
+  height: 7em;
+}
 #submitButton {
   float: right;
   font-size: 1.1rem;
@@ -243,33 +247,13 @@ input {
 small.error {
   display: none;
 }
-.footer {
-    text-align: center;
-    position: relative;
-    font-size: 1em;
-    bottom: 40px;
-    z-index: 9999;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    background-color: #000000;
-    /* Box Shadow */
-    /* Reference: http://css-tricks.com/snippets/css/css-box-shadow/ */
-    /* Opera */
-    -o-box-shadow: 5px 5px 5px #666;
-    /* IE */
-    -ms-box-shadow: 5px 5px 5px #666;
-    /* Mozilla FireFox */
-    -moz-box-shadow: 5px 5px 5px #666;
-    /* Google Chrome */
-    -webkit-box-shadow: 5px 5px 5px #666;
-    /* Normal */
-    box-shadow: 5px 5px 5px #666;
-}
-.footer .copyright {
+#footer {
+  text-align: center;
+  background: #333333;
   color: #FFFFFF;
-  display: inline-block;
-  vertical-align: middle;
+  -webkit-box-shadow: 0px -4px 5px 0px #666;
+  -moz-box-shadow: 0px -4px 5px 0px #666;
+  box-shadow: 0px -4px 5px 0px #666;
 }
 
 // .top-bar-section a {

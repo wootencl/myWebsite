@@ -30,7 +30,25 @@ $(document).ready(function() {
       menu: '#myMenu',
       scrollBar:true,
       controlArrows: false,
-      loopHorizontal: false
+      loopHorizontal: false,
+      normalScrollElements: '#message',
+      paddingTop: function() {
+        if ($('.hide-for-small-only').css('display') == 'none') {
+          return $('.off-canvas-fixed').height();
+        } else {
+          return $('.hide-for-small-only').height();
+        }
+      },
+      paddingBottom: function() {
+        if ($('.hide-for-small-only').css('display') == 'none') {
+          //Set the negative margin for the footer
+          $('#footer').css('margin-top', -1*$('.off-canvas-fixed').height());
+          return $('.off-canvas-fixed').height();
+        } else {
+          $('#footer').css('margin-top', -1*$('.hide-for-small-only').height());
+          return $('.hide-for-small-only').height();
+        }
+      }
     });
   }
   var initSkrollr = function() {
@@ -195,6 +213,7 @@ $(document).ready(function() {
     $("#section4Row1 label").css("font-size", "0.7rem");
     $("#section4Row1 input").css("font-size", "16px");
     $("#section4Row1 textarea").css("font-size", "16px");
+    $("#section4Row1 textarea").css("height", "5em");
     $("#submitButton").css("font-size", "0.8rem");
     $("#section4Row1 small.error").css("font-size", "0.7rem");
 
