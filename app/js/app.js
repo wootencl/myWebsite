@@ -338,6 +338,12 @@ $(document).ready(function() {
     $(document).foundation('equalizer', 'reflow');
     $("p").css("font-size", "0.8em");
     $("body").css("font-size", "1em");
+    if ($(window).width() > 1100){
+      console.log("Resize!");
+      $("body").css("background-size", "100% auto");
+    } else {
+      $("body").css("background-size", "");
+    }
     temp.addClass("active");
     initSkrollr();
     initFP();
